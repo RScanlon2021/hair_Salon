@@ -43,10 +43,6 @@ nav {
   text-transform: uppercase;
 }
 
-.page-logo {
-  /* padding-left: 5%; */
-}
-
 .nav-ul {
   display: flex;
 }
@@ -58,13 +54,10 @@ nav {
 
 .hero-container {
   height: 102vh;
-  /* margin-top: -40px; */
   /* filter: brightness(85%); */
   position: relative;
   display: flex;
   flex-direction: column;
-
-  /* margin: 0 auto; */
 
   background: url(../assets/images/hero-image.jpg) no-repeat center center;
   -webkit-background-size: cover;
@@ -81,7 +74,6 @@ nav {
   top: 210px;
   left: 200px;
   width: 50%;
-
   color: white;
   letter-spacing: 2px;
 }
@@ -89,11 +81,13 @@ nav {
 h1 {
   font-size: 5.5rem;
   font-weight: 100;
-  /* font-family: "Cormorant Garamond"; */
 }
 
 .hero-text > span,
-.discount-container > span {
+.discount-container > span,
+.video-text > span,
+.stylist > span,
+.promo-app-span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,7 +158,210 @@ h1 {
 /* VIDEO SECTION
 /*******************************************/
 
+.video-section {
+  background-color: rgb(241, 241, 243);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 200px;
+}
 
+.video-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 45%;
+  font-size: 1em;
+  padding: 20px;
+}
+
+.video-text > span {
+  color: white;
+  width: 40%;
+  border-radius: 2px;
+}
+
+.video-container {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.video-thumbnail {
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 500px;
+}
+
+.video-icon {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+}
+
+/******************************************
+/* STYLIST SECTION
+/*******************************************/
+
+.stylist-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0;
+  padding: 100px;
+}
+
+.stylist {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stylist > span {
+  margin-top: -40px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  line-height: 2;
+  width: 80%;
+  height: 80px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+/******************************************
+/* PROMOTIONAL SECTION
+/*******************************************/
+
+.offer-container {
+  height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  background: url(../assets/images/Promo-Banner-Image.jpg) no-repeat center
+    center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  margin-bottom: 100px;
+}
+
+.promo-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  width: 40%;
+  height: 300px;
+  /* line-height: 3; */
+  font-size: 1.5rem;
+}
+
+.promo-header {
+  font-size: 1em;
+}
+
+.promo-p {
+  font-size: 1.7em;
+  margin: 30px 0;
+}
+
+.promo-span {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.promo-app-span {
+  color: white;
+  width: 55%;
+  height: 50px;
+  font-size: 0.8em;
+}
+
+/******************************************
+/* LOOKBOOK SECTION
+/*******************************************/
+.lookbook-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  min-height: 100vh;
+}
+
+.lookbook-container h2 {
+  font-size: 3rem;
+}
+
+.lookbook-container hr {
+  width: 50px;
+  height: 5px;
+  background-color: black;
+  margin: 20px auto;
+}
+
+.lookbook-images {
+  position: relative;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: minmax(100px, auto);
+  margin: 40px;
+  grid-auto-flow: dense;
+}
+
+.image-box {
+  padding: 20px;
+  display: grid;
+  /* place-items: center; */
+  transition: 0.5s;
+}
+
+.lookbook-img {
+  position: relative;
+  max-width: 400px;
+  margin-bottom: 5px;
+}
+
+.mas-02,
+.mas-03 {
+  margin-top: -95%;
+}
+
+/* .lookbook-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.lookbook-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 100vw;
+}
+
+.lookbook-img {
+  width: 30%;
+  height: 100%;
+}
+
+.mas-01 {
+  margin-bottom: 100px;
+}
+
+.mas-02,
+.mas-03 {
+  margin-top: -25%;
+} */
 
 /******************************************
 /* FOOTER
