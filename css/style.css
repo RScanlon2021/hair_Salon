@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@0;1&family=Cormorant+Garamond&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz@0,6..96;1,6..96&family=Cinzel&family=Cormorant+Garamond&family=Nanum+Myeongjo&display=swap");
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -25,7 +24,7 @@
 /*******************************************/
 
 body {
-  font-family: "Bodoni Moda", "Cormorant Garamond", sans-serif;
+  font-family: "Cinzel", "Bodoni Moda";
 }
 
 /******************************************
@@ -79,7 +78,7 @@ nav {
   flex-direction: column;
   justify-content: space-evenly;
   position: absolute;
-  top: 200px;
+  top: 210px;
   left: 200px;
   width: 50%;
 
@@ -88,9 +87,9 @@ nav {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 5.5rem;
   font-weight: 100;
-  font-family: "Cormorant Garamond";
+  /* font-family: "Cormorant Garamond"; */
 }
 
 .hero-text > span,
@@ -138,6 +137,38 @@ h1 {
   width: 70%;
   font-size: 1em;
 }
+
+/******************************************
+/* SERVICES SECTION
+/*******************************************/
+
+.services-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 200px;
+  margin-bottom: 100px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 250px;
+  width: 30%;
+  margin-top: 200px;
+}
+
+/******************************************
+/* VIDEO SECTION
+/*******************************************/
+
+
+
+/******************************************
+/* FOOTER
+/*******************************************/
 
 footer {
 }
