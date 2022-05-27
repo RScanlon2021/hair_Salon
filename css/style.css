@@ -116,7 +116,7 @@ body {
 /*******************************************/
 
 .hero-container {
-  height: 50vh;
+  min-height: 50vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -251,6 +251,20 @@ h1 {
 
   .service {
     padding: 0 35px;
+  }
+}
+
+@media (max-height: 600px) {
+  .discount-container {
+    display: none;
+  }
+
+  .hero-container {
+    min-height: 400px;
+  }
+
+  .services-section {
+    margin-top: 0px;
   }
 }
 
@@ -525,6 +539,8 @@ h1 {
 /*******************************************/
 
 footer {
+  height: 50px;
+  background-color: lightgrey;
 }
 
 /******************************************
