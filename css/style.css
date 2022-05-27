@@ -78,7 +78,7 @@ body {
 
 @media (max-width: 800px) {
   .primary-navigation {
-    --gap: 2em;
+    --gap: 1em;
     position: fixed;
     inset: 0 0 0 30%;
     z-index: 1000;
@@ -255,6 +255,9 @@ h1 {
 }
 
 @media (max-height: 600px) {
+  .primary-navigation {
+    padding: min(15vh, 10rem) 2em;
+  }
   .discount-container {
     display: none;
   }
