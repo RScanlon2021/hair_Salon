@@ -260,11 +260,16 @@ h1 {
   }
 
   .hero-container {
-    min-height: 400px;
+    min-height: 550px;
   }
 
   .services-section {
     margin-top: 0px;
+  }
+
+  .hero-text h1,
+  .hero-text > p {
+    padding-top: 0;
   }
 }
 
