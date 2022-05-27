@@ -19,6 +19,10 @@
   clear: both;
 }
 
+.hide {
+  display: none;
+}
+
 /******************************************
 /* BASE STYLES
 /*******************************************/
@@ -28,33 +32,87 @@ body {
 }
 
 /******************************************
-/* LAYOUT
+/* NAVBAR
 /*******************************************/
-header {
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
 }
 
-nav {
-  display: flex;
+.logo {
+  margin: 2rem;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.primary-header {
   align-items: center;
-  justify-content: space-evenly;
-  padding: 15px;
-  font-size: 1rem;
+  justify-content: space-between;
+  padding-right: 20px;
+  height: 80px;
+}
+
+.primary-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: hsl(0 0% 100% / 0.8);
+}
+
+.primary-navigation a {
+  text-decoration: none;
+  color: black;
+}
+
+.primary-navigation a > span {
   font-weight: 700;
-  text-transform: uppercase;
+  margin-inline-end: 0.75em;
 }
 
-.nav-ul {
-  display: flex;
+@media (max-width: 800px) {
+  .primary-navigation {
+    --gap: 2em;
+    position: fixed;
+    inset: 0 0 0 30%;
+    z-index: 1000;
+    padding: min(30vh, 10rem) 2em;
+
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    background: white;
+    border: none;
+    width: 1rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    font-size: 1.5rem;
+  }
+
+  /* .mobile-nav-toggle[aria-expanded = "true"]{
+
+  } */
 }
 
-.nav-ul li {
-  display: flex;
-  padding: 0 20px;
-}
+/******************************************
+/* HERO CONTAINER
+/*******************************************/
 
 .hero-container {
-  height: 102vh;
-  /* filter: brightness(85%); */
+  height: 50vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -69,21 +127,27 @@ nav {
 .hero-text {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  align-self: center;
   position: absolute;
-  top: 210px;
-  left: 200px;
-  width: 50%;
+  width: 100%;
   color: white;
-  letter-spacing: 2px;
 }
 
 h1 {
-  font-size: 5.5rem;
+  font-size: 2rem;
   font-weight: 100;
 }
 
-.hero-text > span,
+.hero-text h1,
+.hero-text > p {
+  position: relative;
+  align-self: center;
+  text-align: center;
+  padding-top: 50px;
+  max-width: 250px;
+  text-shadow: 2px 2px rgba(60, 59, 59, 0.5);
+}
+
 .discount-container > span,
 .video-text > span,
 .stylist > span,
@@ -97,28 +161,21 @@ h1 {
   background-color: black;
 }
 
-.hero-text > span {
-  margin-top: 40px;
-}
-
 .discount-container {
+  position: absolute;
+  top: 250px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-self: center;
   justify-content: space-around;
-  width: 35%;
+  max-width: 250px;
   height: 250px;
   font-size: 0.8em;
   background-color: black;
+  border-radius: 2px;
   margin-top: 100px;
   padding: 20px;
-
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-}
-
-.discount-container,
-.hero-text > span {
-  border-radius: 2px;
 }
 
 #discount-span {
@@ -128,8 +185,36 @@ h1 {
 .discount-container > span {
   color: black;
   background-color: white;
-  width: 70%;
+  width: 100%;
   font-size: 1em;
+}
+
+@media (min-width: 700px) {
+  .discount-container {
+    align-self: flex-start;
+    top: 300px;
+    left: 50px;
+  }
+  .hero-text {
+    top: 100px;
+  }
+
+  .hero-text h1,
+  .hero-text > p {
+    font-size: 1.5em;
+    max-width: 50%;
+    align-self: flex-start;
+    text-align: left;
+    text-shadow: 2px 2px rgba(60, 59, 59, 0);
+    left: 50px;
+  }
+
+  .hero-text h1 {
+    font-size: 4em;
+  }
+  .hero-container {
+    height: 100vh;
+  }
 }
 
 /******************************************
@@ -138,9 +223,9 @@ h1 {
 
 .services-section {
   display: flex;
-  justify-content: space-between;
-  padding: 0 200px;
-  margin-bottom: 100px;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0;
 }
 
 .service {
@@ -149,9 +234,19 @@ h1 {
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  height: 250px;
-  width: 30%;
-  margin-top: 200px;
+  height: 200px;
+  width: 80%;
+  margin-top: 100px;
+}
+
+@media (min-width: 700px) {
+  .services-section {
+    flex-direction: row;
+  }
+
+  .service {
+    padding: 0 35px;
+  }
 }
 
 /******************************************
@@ -161,43 +256,73 @@ h1 {
 .video-section {
   background-color: rgb(241, 241, 243);
   display: flex;
-  justify-content: space-evenly;
-  padding: 50px 200px;
+  flex-direction: column;
+  padding: 10px;
+  padding-bottom: 20px;
 }
 
 .video-text {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-  width: 45%;
-  font-size: 1em;
-  padding: 20px;
+  align-items: center;
+  min-width: 45%;
+  font-size: 0.9em;
+  padding: 10px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.video-text h2 {
+  margin: 20px 0;
 }
 
 .video-text > span {
+  margin: 20px 0;
   color: white;
-  width: 40%;
+  width: 35%;
   border-radius: 2px;
 }
 
 .video-container {
   position: relative;
-  top: 0;
-  left: 0;
+  width: 100%;
 }
 
 .video-thumbnail {
   position: relative;
-  top: 0;
-  left: 0;
-  max-width: 500px;
+  width: 100%;
 }
 
 .video-icon {
   position: absolute;
-  top: 35%;
-  left: 35%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 700px) {
+  .video-text > span {
+    width: 20%;
+  }
+  .video-text {
+    width: 80%;
+    align-self: center;
+  }
+  .video-container {
+    width: 90%;
+    align-self: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-section {
+    flex-direction: row;
+  }
+  .video-container {
+    width: 80%;
+    padding: 20px;
+    align-self: center;
+  }
 }
 
 /******************************************
@@ -206,17 +331,21 @@ h1 {
 
 .stylist-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5rem;
   margin: 50px 0;
-  padding: 100px;
 }
 
 .stylist {
   position: relative;
   display: flex;
-  justify-content: flex-end;
   flex-direction: column;
   align-items: center;
+}
+
+.stylist img {
+  width: 80%;
 }
 
 .stylist > span {
@@ -225,9 +354,21 @@ h1 {
   flex-direction: column;
   color: white;
   line-height: 2;
-  width: 80%;
+  width: 60%;
   height: 80px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 700px) {
+  .stylist-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px 0;
+  }
+  .stylist img {
+    width: 85%;
+  }
 }
 
 /******************************************
@@ -238,7 +379,6 @@ h1 {
   height: 500px;
   position: relative;
   display: flex;
-  flex-direction: column;
 
   background: url(../assets/images/Promo-Banner-Image.jpg) no-repeat center
     center;
@@ -254,13 +394,8 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  top: 100px;
-  left: 200px;
-  width: 40%;
-  height: 300px;
-  /* line-height: 3; */
-  font-size: 1.5rem;
+  width: 60%;
+  margin-left: 50px;
 }
 
 .promo-header {
@@ -279,21 +414,33 @@ h1 {
 
 .promo-app-span {
   color: white;
-  width: 55%;
-  height: 50px;
+  width: 15em;
+  height: 5em;
   font-size: 0.8em;
+}
+
+@media (min-width: 960px) {
+  .promo-div {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  .promo-app-span {
+    width: 15em;
+    height: 3em;
+    font-size: 0.8em;
+  }
 }
 
 /******************************************
 /* LOOKBOOK SECTION
 /*******************************************/
+
 .lookbook-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
-  align-self: center;
-  min-height: 100vh;
+  transition: 1s;
+  padding: 5%;
 }
 
 .lookbook-container h2 {
@@ -304,64 +451,69 @@ h1 {
   width: 50px;
   height: 5px;
   background-color: black;
-  margin: 20px auto;
+  margin: 60px auto;
 }
 
 .lookbook-images {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+}
+
+.lookbook-item img {
   max-width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-template-rows: minmax(100px, auto);
-  margin: 40px;
-  grid-auto-flow: dense;
 }
 
-.image-box {
-  padding: 20px;
-  display: grid;
-  /* place-items: center; */
-  transition: 0.5s;
+@media (min-width: 700px) {
+  .lookbook-item img {
+    max-width: 90%;
+  }
+  .lookbook-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .short {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  .tall {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
 }
 
-.lookbook-img {
-  position: relative;
-  max-width: 400px;
-  margin-bottom: 5px;
+@media (min-width: 1024px) {
+  .lookbook-item img {
+    max-width: 100%;
+  }
+  .lookbook-images {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .short {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  .tall {
+    grid-row: span 2;
+    grid-column: span 1;
+  }
+
+  .box-05 {
+    grid-row: span 1;
+    grid-column: 2 / span 1;
+  }
+
+  .box-06 {
+    grid-row: 2 / span 2;
+    grid-column: 3 / span 1;
+  }
 }
-
-.mas-02,
-.mas-03 {
-  margin-top: -95%;
-}
-
-/* .lookbook-container {
-  display: flex;
-  flex-direction: column;
-}
-
-
-.lookbook-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  width: 100vw;
-}
-
-.lookbook-img {
-  width: 30%;
-  height: 100%;
-}
-
-.mas-01 {
-  margin-bottom: 100px;
-}
-
-.mas-02,
-.mas-03 {
-  margin-top: -25%;
-} */
 
 /******************************************
 /* FOOTER

@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Your description goes here" />
     <meta name="keywords" content="one, two, three" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
     <title>Blank Template</title>
 
@@ -12,36 +13,56 @@
       src="https://kit.fontawesome.com/055c4b23dd.js"
       crossorigin="anonymous"
     ></script>
+    
     <link rel="stylesheet" href="css/style.css" />
 
     <script defer type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
-    <header>
-      <nav>
-        <span class="page-logo"
-          ><img src="assets/images/dark_logo.png" alt=""
-        /></span>
-        <ul class="nav-ul">
-          <li>home</li>
-          <li>about</li>
-          <li>services</li>
-          <li>lookbook</li>
-          <li>news</li>
-          <li>contact</li>
-          <li><i class="fa-solid fa-magnifying-glass"></i></li>
-          <li><i class="fa-solid fa-cart-arrow-down"></i></li>
+    <header class="primary-header flex">
+      <div class="logo"><img src="assets/images/dark_logo.png" alt="" /></div>
+
+      <button class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+        <i class="fa-solid fa-bars menu-icon"></i>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav class="navbar">
+        <ul id="primary-nav" data-visible="false" class="primary-navigation flex">
+          <li class="active">
+            <a href="#"> <span aria-hidden="true"></span>Home</a>
+          </li>
+          <li>
+            <a href="#"> <span aria-hidden="true"></span>About</a>
+          </li>
+          <li>
+            <a href="#"> <span aria-hidden="true"></span>Services</a>
+          </li>
+          <li>
+            <a href="#"> <span aria-hidden="true"></span>Lookbook</a>
+          </li>
+          <li>
+            <a href="#"> <span aria-hidden="true"></span>Contact</a>
+          </li>
+          <li>
+            <a href="#"> <span aria-hidden="true"></span>Appointments</a>
+          </li>
         </ul>
-        <span>
-          Book Online
-          <hr
-        /></span>
+        <!-- 
+          <li class="nav-item">
+            <i class="fa-solid fa-magnifying-glass nav-link"></i>
+          </li>
+          <li class="nav-item">
+            <i class="fa-solid fa-cart-arrow-down nav-link"></i>
+          </li>
+          
+        </ul> -->
+      </header>
       </nav>
       <div class="hero-container">
         <div class="hero-text">
-          <h1>BLONDE <br />& HIGHLIGHT</h1>
+          <h1>BLONDE & HIGHLIGHT</h1>
           <p>DIVIDE YOUR UNIQUENESS BY YOUR HAIRS IN STYLE</p>
-          <span>- OUR SERVICES</span>
           <div class="discount-container">
             <p>YOUR FIRST VISIT?</p>
             <p>
@@ -52,7 +73,7 @@
           </div>
         </div>
       </div>
-    </header>
+    
     <section class="services-section">
       <div class="service">
         <span><img src="assets/images/quality-icon-01.png" alt="" /></span>
@@ -86,7 +107,7 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit
           pariatur, tempora cupiditate neque debitis, velit, quam molestias
           omnis ipsam rerum voluptatem deleniti. Odio, dolorum quod soluta harum
-          nostrum voluptatum quo?/p>
+          nostrum voluptatum quo?
         </p>
         <span>- read more</span>
       </div>
@@ -135,35 +156,28 @@
       <h2>our lookbook</h2>
       <hr />
       <div class="lookbook-images">
-        <div class="image-box">
-          <div class="lookbook-img">
-            <img src="assets/images/Gallery-01.jpg" alt="" />
-          </div>
+        <div class="lookbook-item box-01 short">
+          <img src="assets/images/Gallery-01.jpg" alt="" />
         </div>
-        <div class="image-box">
-          <div class="lookbook-img mas-01">
-            <img src="assets/images/Masonry-01.jpg" alt="" />
-          </div>
+
+        <div class="lookbook-item box-02 tall">
+          <img src="assets/images/Masonry-01.jpg" alt="" />
         </div>
-        <div class="image-box">
-          <div class="lookbook-img">
-            <img src="assets/images/Gallery-02.jpg" alt="" />
-          </div>
+
+        <div class="lookbook-item box-03 short">
+          <img src="assets/images/Gallery-02.jpg" alt="" />
         </div>
-        <div class="image-box">
-          <div class="lookbook-img mas-03">
-            <img src="assets/images/Masonry-03.jpg" alt="" />
-          </div>
+
+        <div class="lookbook-item box-04 tall">
+          <img src="assets/images/Masonry-03.jpg" alt="" />
         </div>
-        <div class="image-box">
-          <div class="lookbook-img">
-            <img src="assets/images/Gallery-04.jpg" alt="" />
-          </div>
+
+        <div class="lookbook-item box-05 short">
+          <img src="assets/images/Gallery-04.jpg" alt="" />
         </div>
-        <div class="image-box">
-          <div class="lookbook-img mas-02">
-            <img src="assets/images/Masonry-02.jpg" alt="" />
-          </div>
+
+        <div class="lookbook-item box-06 tall">
+          <img src="assets/images/Masonry-02.jpg" alt="" />
         </div>
       </div>
     </section>
