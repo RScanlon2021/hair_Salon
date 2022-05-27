@@ -267,9 +267,8 @@ h1 {
     margin-top: 0px;
   }
 
-  .hero-text h1,
-  .hero-text > p {
-    padding-top: 0;
+  .hero-text {
+    top: 0;
   }
 }
 
