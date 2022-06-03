@@ -13,33 +13,60 @@
       src="https://kit.fontawesome.com/055c4b23dd.js"
       crossorigin="anonymous"
     ></script>
-    
+
     <link rel="stylesheet" href="css/style.css" />
 
-    <script defer type="text/javascript" src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
   </head>
   <body>
+    <span class="scroll-to-top"><i class="fa-solid fa-angle-up"></i></span>
     <header class="primary-header flex">
       <div class="logo"><img src="assets/images/dark_logo.png" alt="" /></div>
 
-      <button class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+      >
         <i class="fa-solid fa-bars menu-icon"></i>
         <span class="sr-only">Menu</span>
       </button>
 
       <nav class="navbar">
-        <ul id="primary-nav" data-visible="false" class="primary-navigation flex">
+        <ul
+          id="primary-nav"
+          data-visible="false"
+          class="primary-navigation flex"
+        >
           <li class="active">
             <a href="#"> <span aria-hidden="true"></span>Home</a>
           </li>
           <li>
-            <a href="#"> <span aria-hidden="true"></span>About</a>
+            <a
+              id="about-btn-scroll"
+              class="nav__link about-btn-scroll"
+              href="#about-section"
+            >
+              <span aria-hidden="true"></span>About</a
+            >
           </li>
           <li>
-            <a href="#"> <span aria-hidden="true"></span>Services</a>
+            <a
+              id="services-btn-scroll"
+              class="nav__link"
+              href="#stylist-section"
+            >
+              <span aria-hidden="true"></span>Services</a
+            >
           </li>
           <li>
-            <a href="#"> <span aria-hidden="true"></span>Lookbook</a>
+            <a
+              id="lookbook-btn-scroll"
+              class="nav__link"
+              href="#lookbook-section"
+            >
+              <span aria-hidden="true"></span>Lookbook</a
+            >
           </li>
           <li>
             <a href="#"> <span aria-hidden="true"></span>Contact</a>
@@ -47,33 +74,31 @@
           <li>
             <a href="#"> <span aria-hidden="true"></span>Appointments</a>
           </li>
-        </ul>
-        <!-- 
-          <li class="nav-item">
+          <li class="nav-icon">
             <i class="fa-solid fa-magnifying-glass nav-link"></i>
           </li>
-          <li class="nav-item">
+          <li class="nav-icon">
             <i class="fa-solid fa-cart-arrow-down nav-link"></i>
           </li>
-          
-        </ul> -->
-      </header>
+        </ul>
       </nav>
-      <div class="hero-container">
-        <div class="hero-text">
-          <h1>BLONDE & HIGHLIGHT</h1>
-          <p>DIVIDE YOUR UNIQUENESS BY YOUR HAIRS IN STYLE</p>
-          <div class="discount-container">
-            <p>YOUR FIRST VISIT?</p>
-            <p>
-              <span id="discount-span">-20%</span> FOR THE FIRST CLASSIC HAIR
-              COLOURING
-            </p>
-            <span>- BOOK ONLINE </span>
-          </div>
+    </header>
+
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>BLONDE & HIGHLIGHT</h1>
+        <p>DIVIDE YOUR UNIQUENESS BY YOUR HAIRS IN STYLE</p>
+        <div class="discount-container">
+          <p>YOUR FIRST VISIT?</p>
+          <p>
+            <span id="discount-span">-20%</span> FOR THE FIRST CLASSIC HAIR
+            COLOURING
+          </p>
+          <span>- BOOK ONLINE </span>
         </div>
       </div>
-    
+    </div>
+
     <section class="services-section">
       <div class="service">
         <span><img src="assets/images/quality-icon-01.png" alt="" /></span>
@@ -100,7 +125,7 @@
         </p>
       </div>
     </section>
-    <section class="video-section">
+    <section id="about-section" class="video-section">
       <div class="video-text">
         <h2>Make your own momentum</h2>
         <p>
@@ -120,27 +145,63 @@
         <img class="video-icon" src="assets/images/video_icon.png" alt="" />
       </div>
     </section>
-    <section class="stylist-container">
-      <div class="stylist">
+    <!-- <section id="stylist-section" class="stylist-container slider">
+      <div class="slide slide--1">
         <img src="assets/images/Styler-01.jpg" alt="" />
         <span>
           <h3>Alita Williams</h3>
           <p>Colourist</p>
         </span>
       </div>
-      <div class="stylist">
+      <div class="slide slide--2">
         <img src="assets/images/Styler-02.jpg" alt="" />
         <span>
           <h3>Ayesha Lake</h3>
           <p>Styler</p>
         </span>
       </div>
-      <div class="stylist">
+      <div class="slide slide--3">
         <img src="assets/images/Styler-03.jpg" alt="" />
         <span>
           <h3>Smith Mitchel</h3>
           <p>Beautician</p>
         </span>
+      </div>
+
+      <button class="slider__btn slider__btn--left">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+      </button>
+      <button class="slider__btn slider__btn--right">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+      </button>
+      <div class="dots"></div>
+
+      <!-- <div class="slide slide--1" style="transform: translate(0%)">
+        <div class="stylist">
+          <img src="assets/images/Styler-01.jpg" alt="" />
+          <span>
+            <h3>Alita Williams</h3>
+            <p>Colourist</p>
+          </span>
+        </div>
+      </div>
+      <div class="slide slide--2" style="transform: translate(100%)">
+        <div class="stylist">
+          <img src="assets/images/Styler-02.jpg" alt="" />
+          <span>
+            <h3>Ayesha Lake</h3>
+            <p>Styler</p>
+          </span>
+        </div>
+      </div>
+      <div class="slide slide--3" style="transform: translate(200%)">
+        <div class="stylist">
+          <img src="assets/images/Styler-03.jpg" alt="" />
+          <span>
+            <h3>Smith Mitchel</h3>
+            <p>Beautician</p>
+          </span>
+        </div>
       </div>
     </section>
     <section class="offer-container">
@@ -150,9 +211,9 @@
           <span class="promo-span">-10%</span> on haircut color and highlight
         </p>
         <span class="promo-app-span">- Book appointment</span>
-      </div>
-    </section>
-    <section class="lookbook-container">
+      </div> -->
+    </section> -->
+    <section id="lookbook-section" class="lookbook-container">
       <h2>our lookbook</h2>
       <hr />
       <div class="lookbook-images">
