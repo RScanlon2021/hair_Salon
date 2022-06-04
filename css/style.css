@@ -369,7 +369,7 @@ h1 {
   flex-direction: column;
   margin: 50px 0 50px 0;
   padding-top: 50px;
-  max-height: 1000px;
+  max-height: 1100px;
   overflow: hidden;
 }
 
@@ -448,7 +448,17 @@ h1 {
 
 @media (max-width: 760px) {
   .slider__btn {
-    display: none;
+    top: 90%;
+    margin-top: 30px;
+  }
+  .slider__btn--left {
+    left: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider__btn--right {
+    right: 40%;
+    transform: translate(50%, -50%);
   }
 }
 
