@@ -70,10 +70,6 @@ const btnRight = document.querySelector(".slider__btn--right");
 let currentSlide = 0;
 const maxSlide = slides.length;
 
-// const slider = document.querySelector(".slider");
-// slider.style.transform = "scale(1)";
-// slider.style.overflow = "visible";
-
 const goToSlide = function (slide) {
   slides.forEach(
     (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
