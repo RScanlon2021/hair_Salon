@@ -163,7 +163,7 @@ h1 {
 
 .discount-container > span,
 .video-text > span,
-.stylist > span,
+.slide > span,
 .promo-app-span {
   display: flex;
   align-items: center;
@@ -367,12 +367,9 @@ h1 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 100px 0 50px 0;
+  margin: 50px 0 50px 0;
+  padding-top: 50px;
   max-height: 1000px;
-}
-
-#stylist-section span {
-  width: 35%;
 }
 
 #stylist-section h2 {
@@ -389,10 +386,7 @@ h1 {
 .slider {
   width: 60rem;
   height: 100rem;
-  /* margin: 0 auto; */
   position: relative;
-
-  /* IN THE END */
   overflow: hidden;
 }
 
@@ -408,7 +402,6 @@ h1 {
   align-items: center;
   justify-content: center;
 
-  /* THIS creates the animation! */
   transition: transform 1s;
 }
 
@@ -425,9 +418,9 @@ h1 {
   z-index: 100;
 
   border: none;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0);
   font-family: inherit;
-  color: #333;
+  color: rgba(38, 52, 117, 0.5);
   border-radius: 50%;
   height: 5.5rem;
   width: 5.5rem;
@@ -436,57 +429,30 @@ h1 {
 }
 
 .slider__btn--left {
-  left: 10%;
+  left: 15%;
   transform: translate(-50%, -50%);
 }
 
 .slider__btn--right {
-  right: 10%;
+  right: 15%;
   transform: translate(50%, -50%);
 }
 
-.stylist > span {
+@media (max-width: 760px) {
+  .slider__btn {
+    display: none;
+  }
+}
+
+.slide > span {
   margin-top: -40px;
   display: flex;
   flex-direction: column;
   color: white;
   line-height: 2;
-  width: 60%;
+  width: 35%;
   height: 80px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.dots {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-}
-
-.dots__dot {
-  border: none;
-  background-color: #b9b9b9;
-  opacity: 0.7;
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
-  margin-right: 1.75rem;
-  cursor: pointer;
-  transition: all 0.5s;
-
-  /* Only necessary when overlying images */
-  /* box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7); */
-}
-
-.dots__dot:last-child {
-  margin: 0;
-}
-
-.dots__dot--active {
-  /* background-color: #fff; */
-  background-color: #888;
-  opacity: 1;
 }
 
 /* .stylist-container {
